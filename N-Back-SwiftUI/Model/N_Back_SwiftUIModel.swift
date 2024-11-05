@@ -9,13 +9,15 @@ import Foundation
 
 struct N_BackSwiftUIModel {
     private var count : Int
+    private let letters = ["A", "B", "C", "D", "E"] // Lista av bokstäver
     
     init(count: Int) {
         self.count = count
     }
     
-    func getString() -> String{
-        return "Hello World"
+    func getString() -> String {
+            // Returnerar en slumpmässig bokstav från listan
+            return letters.randomElement() ?? "A"
     }
     
     func getHighScore() -> Int{
@@ -27,13 +29,13 @@ struct N_BackSwiftUIModel {
     }
       
     mutating func resetNback(){
-        let Nback = create(20, 9, 20, 2)
+        let Nback = create(20, 9, 20, 1)
         
         for i in 1...3 {
             let test:Int32 = Int32(i)
             print("aValue: \(getIndexOf(Nback, test))")
         }
-        
     }
+
    
 }
